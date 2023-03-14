@@ -23,34 +23,24 @@
 
 <body>
     <main>
-        <header x-data="{ open: false }">
-            <button class="abrirmenu" @click="open = !open">
-                Botão ABRIR MENU
-            </button>
-        
-            <div class="menuAberto" x-show="open">
-                MENU ABERTO
-
-                <button class="fecharMenu" @click="open = !open">
-                    Botão FECHAR MENU
-                </button>
+        <!-- START SLIDER -->
+        <div class="swiper classSlider"> <!-- class utilizada no ficheiro main.js para iniciar slider, se projeto não tem slider, remover do main.js -->
+            <div class="swiper-wrapper">
+                <!-- PARA CADA SLIDER UMA LI -->
+                <div class="swiper-slide" style="height:100vh; background-color: pink;"> <!-- estilo apenas para teste, adicionar estilos custom utilizando classes -->
+                    SLIDER 1
+                </div>
+                <div class="swiper-slide" style="height:100vh; background-color: blue;">
+                    SLIDER 2
+                </div>
             </div>
-        </header>
+        </div>
+        <!-- END SLIDER -->
     </main>
 </body>
 
-<style>
-    .menuAberto {
-        height: 100vh;
-        width: 100%;
-        background: aqua;
-        top: 0;
-        left: 0;
-        color: black;
-        position: fixed;
-
-    }
-</style>
-
 </html>
-<script src="js/alpine.js" defer></script>
+
+<!-- UTILIZAR FICHEIRO JS SWIPER -->
+<script src="js/swiper-bundle.min.js" defer></script>
+<script src="js/main.js" defer></script>

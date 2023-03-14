@@ -684,7 +684,8 @@ audio:not([controls]) {
   height: 0;
 }
 
-[hidden], template {
+[hidden],
+template {
   display: none;
 }
 
@@ -842,7 +843,8 @@ textarea {
   vertical-align: baseline;
 }
 
-button, input {
+button,
+input {
   line-height: normal;
 }
 
@@ -864,7 +866,8 @@ input[disabled] {
   cursor: default;
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -891,6 +894,95 @@ input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-se
 input[type=checkbox], input[type=radio] {
   box-sizing: border-box;
   padding: 0;
+}
+
+/* OVERRIDES */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+figure iframe {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a[href^=tel] {
+  color: inherit;
+  text-decoration: none;
+}
+
+input[type=email],
+input[type=text],
+input[type=number],
+select,
+textarea {
+  appearance: none;
+  border-radius: 0;
+}
+
+a {
+  color: inherit;
+  transition: color 0.15s ease-in-out;
+}
+
+/* COLUNAS IGUAIS*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1.5rem;
+}
+.grid li {
+  background-color: aqua;
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: end;
+  padding: 2rem;
+}
+.grid li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.2;
+}
+.grid .conteudo {
+  position: relative;
+  z-index: 1;
+}
+.grid img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
 }
 
 /*# sourceMappingURL=style.css.map */

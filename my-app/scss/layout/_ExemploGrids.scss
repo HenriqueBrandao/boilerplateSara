@@ -1,0 +1,45 @@
+    /* COLUNAS IGUAIS*/
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 1.5rem;
+
+        li {
+            background-color: aqua;
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: end;
+            padding: 2rem;
+
+            // overlay escura na imagem, .conteudo tem position relative para ficar em cima ( z-index )
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #000;
+                opacity: 0.2;
+            }
+        }
+
+        .conteudo {
+            position: relative;
+            z-index: 1;
+        }
+
+        img {
+            // imagem em position absolute e a ocupar 100% width e height, cover para não esticar imagem.
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            left: 0;
+            top: 0;
+        }
+    }
